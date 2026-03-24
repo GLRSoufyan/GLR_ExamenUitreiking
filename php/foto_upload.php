@@ -103,7 +103,7 @@ for ($i = 0; $i < $aantalBestanden; $i++) {
     'image/webp' => '.webp'
   ];
   $extensie = $extensies[$mimeType];
-  $nieuweNaam = uniqid('foto_', true) . $extensie;
+  $nieuweNaam = foto_upload . phpuniqid('foto_', true) . $extensie;
   $doeluPad = $uploadMap . $nieuweNaam;
 
   // Bestand verplaatsen naar uploads map

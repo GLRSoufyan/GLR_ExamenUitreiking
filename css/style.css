@@ -1,0 +1,1579 @@
+/* =====================================================
+   GLR Diploma-uitreiking 2025 — Stijlblad
+   Kleuren: Groen (#8FE508), Goud (#B8860B), Zwart (#0A0A0A)
+   Fonts: Fredoka (tekst), Luckiest Guy (titels)
+   Gemaakt door: Student GLR
+   ===================================================== */
+
+/* CSS variabelen zodat kleuren makkelijk aangepast kunnen worden */
+:root {
+  --groen: #8FE508;
+  --groen-donker: #6cb000;
+  --groen-licht: #a8f020;
+  --goud: #B8960C;
+  --goud-licht: #d4aa20;
+  --zwart: #0A0A0A;
+  --donker: #111111;
+  --donker-2: #1a1a1a;
+  --donker-3: #222222;
+  --wit: #ffffff;
+  --grijs: #888888;
+  --grijs-licht: #cccccc;
+  --danger: #e53e3e;
+
+  /* Afmetingen */
+  --navbar-hoogte: 70px;
+  --border-radius: 12px;
+  --border-radius-groot: 24px;
+  --schaduw: 0 4px 20px rgba(0,0,0,0.4);
+  --schaduw-groen: 0 0 20px rgba(143, 229, 8, 0.3);
+}
+
+/* Reset - zodat alle browsers hetzelfde beginnen */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Basis body styling - donkere achtergrond past bij het thema */
+body {
+  font-family: 'Fredoka', sans-serif;
+  background-color: var(--donker);
+  color: var(--wit);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Handige hulp klassen */
+.hidden { display: none !important; }
+.groen { color: var(--groen); }
+.goud { color: var(--goud-licht); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Luckiest Guy font voor titels */
+.luckies {
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   LOGIN SCHERM
+   ============================================================ */
+
+/* Het login scherm bedekt het hele scherm */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--donker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.login-box {
+  background: var(--donker-2);
+  border: 2px solid var(--groen);
+  border-radius: var(--border-radius-groot);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--schaduw-groen);
+  animation: inkomend 0.5s ease;
+}
+
+/* Animatie bij het laden van de login box */
+@keyframes inkomend {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo en school naam bovenaan login */
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.login-school-name {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1rem;
+  color: var(--groen);
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.login-title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.login-subtitle {
+  color: var(--grijs);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Het invoerveld voor de code */
+.code-input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: var(--donker-3);
+  border: 2px solid var(--donker-3);
+  border-radius: var(--border-radius);
+  color: var(--wit);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: var(--groen);
+  box-shadow: 0 0 0 3px rgba(143, 229, 8, 0.15);
+}
+
+/* Inloggen knop */
+.btn-inloggen {
+  width: 100%;
+  padding: 1rem;
+  background: var(--groen);
+  color: var(--zwart);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-inloggen:hover {
+  background: var(--groen-licht);
+  transform: translateY(-1px);
+}
+
+.btn-inloggen:active { transform: translateY(0); }
+
+/* Foutmelding onder de knop */
+.foutmelding {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  text-align: center;
+  animation: schudden 0.4s ease;
+}
+
+/* Schud animatie bij verkeerde code */
+@keyframes schudden {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* Decoratief diploma icoon */
+.login-deco {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 3rem;
+  opacity: 0.3;
+  transform: rotate(15deg);
+}
+
+/* Achtergrond vierkantjes - zoals in het design van de mockups */
+.bg-squares {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sq {
+  position: absolute;
+  border: 2px solid rgba(143, 229, 8, 0.2);
+  border-radius: 8px;
+  animation: zweven 6s ease-in-out infinite;
+}
+
+/* Posities van de achtergrond vierkantjes */
+.sq1 { width: 80px; height: 90px; top: 8%; left: 5%; animation-delay: 0s; }
+.sq2 { width: 100px; height: 110px; top: 15%; left: 12%; animation-delay: 0.5s; }
+.sq3 { width: 70px; height: 80px; top: 5%; right: 8%; animation-delay: 1s; }
+.sq4 { width: 90px; height: 100px; bottom: 20%; left: 3%; animation-delay: 1.5s; }
+.sq5 { width: 110px; height: 120px; bottom: 10%; right: 5%; animation-delay: 2s; }
+.sq6 { width: 60px; height: 70px; top: 50%; right: 15%; animation-delay: 2.5s; }
+
+@keyframes zweven {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-15px) rotate(5deg); opacity: 0.6; }
+}
+
+/* ============================================================
+   NAVIGATIE BALK
+   ============================================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--groen);
+  height: var(--navbar-hoogte);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+
+/* Logo in navbar */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-titel {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: var(--wit);
+}
+
+/* Navigatie links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--grijs-licht);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+/* Actieve pagina link */
+.nav-link.active, .nav-link:hover {
+  color: var(--zwart);
+  background: var(--groen);
+}
+
+/* Admin link heeft een speciale kleur */
+.nav-link.admin-link {
+  color: var(--goud-licht);
+  border: 1px solid var(--goud);
+}
+
+.nav-link.admin-link:hover {
+  background: var(--goud);
+  color: var(--zwart);
+}
+
+/* Uitlog knop */
+.btn-uitloggen {
+  background: transparent;
+  color: var(--grijs);
+  border: 1px solid var(--grijs);
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-uitloggen:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+/* Hamburger menu knop voor mobiel */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--wit);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobiel menu (uitgeklapt) */
+.mobile-menu {
+  position: fixed;
+  top: var(--navbar-hoogte);
+  left: 0;
+  right: 0;
+  background: var(--donker-2);
+  border-bottom: 2px solid var(--groen);
+  z-index: 99;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--wit);
+  padding: 0.8rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.mobile-menu a:hover { background: var(--groen); color: var(--zwart); }
+
+/* ============================================================
+   PAGINA LAYOUT
+   ============================================================ */
+
+/* Alle paginas zijn standaard verstopt */
+.pagina {
+  display: none;
+  min-height: calc(100vh - var(--navbar-hoogte));
+  padding-bottom: 3rem;
+}
+
+/* Actieve pagina is zichtbaar */
+.pagina.actief { display: block; }
+
+/* ============================================================
+   HOME PAGINA - HERO SECTIE
+   ============================================================ */
+
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--donker) 0%, var(--donker-3) 50%, rgba(143, 229, 8, 0.05) 100%);
+  padding: 5rem 2rem 4rem;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 1px solid rgba(143, 229, 8, 0.2);
+}
+
+/* Badge boven de titel */
+.hero-badge {
+  display: inline-block;
+  background: rgba(143, 229, 8, 0.15);
+  border: 1px solid var(--groen);
+  color: var(--groen);
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: pulseer 2s ease-in-out infinite;
+}
+
+@keyframes pulseer {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(143, 229, 8, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(143, 229, 8, 0); }
+}
+
+/* Grote hero titel */
+.hero-titel {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: 3px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-jaar {
+  color: var(--groen);
+  display: block;
+}
+
+.hero-tekst {
+  color: var(--grijs-licht);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+/* Knoppen in de hero */
+.hero-knoppen {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Decoratieve vlakken in hero achtergrond */
+.hero-deco { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hero-sq {
+  position: absolute;
+  border: 2px solid rgba(143, 229, 8, 0.15);
+  border-radius: 8px;
+  animation: zweven 8s ease-in-out infinite;
+}
+.hero-sq1 { width: 80px; height: 90px; top: 10%; right: 10%; animation-delay: 0s; }
+.hero-sq2 { width: 60px; height: 70px; top: 60%; right: 5%; animation-delay: 1s; }
+.hero-sq3 { width: 100px; height: 110px; bottom: 5%; left: 5%; animation-delay: 2s; }
+
+/* ============================================================
+   KNOPPEN (algemeen)
+   ============================================================ */
+
+.btn-primair {
+  background: var(--groen);
+  color: var(--zwart);
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primair:hover {
+  background: var(--groen-licht);
+  transform: translateY(-2px);
+  box-shadow: var(--schaduw-groen);
+}
+
+.btn-primair:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secundair {
+  background: transparent;
+  color: var(--groen);
+  border: 2px solid var(--groen);
+  padding: 0.9rem 2rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secundair:hover {
+  background: var(--groen);
+  color: var(--zwart);
+  transform: translateY(-2px);
+}
+
+/* Kleiner secundair knopje voor in kaarten */
+.btn-secundair.klein {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* Gevaarlijke knop (rood) voor verwijderen etc */
+.btn-gevaar {
+  background: var(--danger);
+  color: var(--wit);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-gevaar:hover { opacity: 0.85; }
+
+/* ============================================================
+   POSTS SECTIE (HOME)
+   ============================================================ */
+
+.posts-sectie {
+  padding: 3rem 0;
+}
+
+.sectie-titel {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Grid voor de posts */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Een post kaart */
+.post-kaart {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-groot);
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s;
+  animation: inkomend 0.4s ease;
+}
+
+.post-kaart:hover {
+  transform: translateY(-3px);
+  border-color: rgba(143, 229, 8, 0.3);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.post-auteur {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--groen);
+}
+
+.post-datum {
+  font-size: 0.8rem;
+  color: var(--grijs);
+}
+
+.post-titel {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.post-tekst {
+  color: var(--grijs-licht);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Like knop onderaan de post */
+.post-acties {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.like-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--wit);
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+}
+
+/* Als iemand geliked heeft - knop wordt groen */
+.like-btn.geliked {
+  background: rgba(143, 229, 8, 0.15);
+  border-color: var(--groen);
+  color: var(--groen);
+}
+
+.like-btn:hover { border-color: var(--groen); }
+
+/* Hart animatie bij liken */
+.like-hart { font-size: 1.1rem; transition: transform 0.2s; }
+.like-btn:active .like-hart { transform: scale(1.4); }
+
+.post-deel-hint {
+  font-size: 0.8rem;
+  color: var(--grijs);
+}
+
+/* Fotos preview in post */
+.post-fotos-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-fotos-preview img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Admin post toevoegen formulier */
+.admin-post-form {
+  background: var(--donker-2);
+  border: 1px solid rgba(143, 229, 8, 0.2);
+  border-radius: var(--border-radius-groot);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-post-form h3 {
+  margin-bottom: 1rem;
+  color: var(--groen);
+}
+
+/* ============================================================
+   INFO BLOKJES (HOME)
+   ============================================================ */
+
+.info-sectie {
+  padding: 3rem 0;
+  background: rgba(143, 229, 8, 0.03);
+  border-top: 1px solid rgba(143, 229, 8, 0.1);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Een info kaart */
+.info-kaart {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-groot);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.info-kaart:hover {
+  border-color: var(--groen);
+  transform: translateY(-5px);
+  box-shadow: var(--schaduw-groen);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-kaart h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-kaart p {
+  color: var(--grijs);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PAGINA HEADERS
+   ============================================================ */
+
+.pagina-header {
+  padding: 2.5rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagina-titel {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.pagina-sub {
+  color: var(--grijs);
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* ============================================================
+   LIVESTREAM PAGINA
+   ============================================================ */
+
+/* Live badge naast de titel */
+.live-badge {
+  background: rgba(229, 62, 62, 0.2);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Knipperende live stip */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+  animation: knipperen 1s ease-in-out infinite;
+}
+
+@keyframes knipperen {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Vimeo video wrapper - 16:9 verhouding */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-groot);
+  border: 2px solid rgba(143, 229, 8, 0.3);
+  background: var(--donker-3);
+  box-shadow: var(--schaduw-groen);
+  margin-bottom: 1.5rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.video-info {
+  margin-bottom: 2rem;
+}
+
+.video-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-info p {
+  color: var(--grijs);
+}
+
+/* ============================================================
+   LIVE CHAT
+   ============================================================ */
+
+.chat-sectie {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-groot);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: var(--donker-3);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.chat-header h3 { font-size: 1.1rem; }
+
+.chat-aanwezig {
+  font-size: 0.8rem;
+  color: var(--groen);
+  background: rgba(143, 229, 8, 0.1);
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+}
+
+/* Chat berichten container - scrollbaar */
+.chat-berichten {
+  height: 320px;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar stijl voor chat */
+.chat-berichten::-webkit-scrollbar { width: 5px; }
+.chat-berichten::-webkit-scrollbar-track { background: transparent; }
+.chat-berichten::-webkit-scrollbar-thumb { background: var(--donker-3); border-radius: 5px; }
+
+/* Een chat bericht */
+.chat-bericht {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  animation: inschuiven 0.2s ease;
+  font-size: 0.95rem;
+}
+
+@keyframes inschuiven {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.chat-naam {
+  font-weight: 600;
+  color: var(--groen);
+  min-width: 80px;
+  font-size: 0.85rem;
+}
+
+/* Systeem berichten zien er anders uit */
+.chat-bericht.systeem .chat-naam { color: var(--goud-licht); }
+.chat-bericht.systeem .chat-tekst { color: var(--grijs); font-style: italic; }
+
+/* Admin berichten hebben rode naam */
+.chat-naam.admin-naam { color: var(--goud-licht); }
+
+.chat-tekst { color: var(--grijs-licht); }
+
+/* Chat invoer sectie */
+.chat-invoer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.chat-input {
+  flex: 1;
+  background: var(--donker-3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  color: var(--wit);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--groen);
+}
+
+.btn-chat-stuur {
+  background: var(--groen);
+  color: var(--zwart);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-chat-stuur:hover { background: var(--groen-licht); }
+
+/* Admin chat tools */
+.chat-admin-tools {
+  padding: 0.75rem 1.5rem;
+  background: rgba(184, 134, 11, 0.1);
+  border-top: 1px solid rgba(184, 134, 11, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-label {
+  font-size: 0.8rem;
+  color: var(--goud-licht);
+}
+
+.btn-admin-klein {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-admin-klein:hover { background: var(--danger); color: var(--wit); }
+
+/* ============================================================
+   FOTO GALERIJ
+   ============================================================ */
+
+/* Filter knoppen voor klassen */
+.foto-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: var(--donker-3);
+  color: var(--grijs-licht);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.actief, .filter-btn:hover {
+  background: var(--groen);
+  color: var(--zwart);
+  border-color: var(--groen);
+  font-weight: 600;
+}
+
+/* Foto grid */
+.foto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Een enkele foto kaart */
+.foto-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--donker-3);
+  transition: transform 0.2s;
+}
+
+.foto-item:hover { transform: scale(1.02); }
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.foto-item:hover img { transform: scale(1.05); }
+
+/* Overlay als je hovert */
+.foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.foto-item:hover .foto-overlay { opacity: 1; }
+
+.foto-overlay span { color: var(--wit); font-size: 1.5rem; }
+
+/* Lege staat als er geen fotos zijn */
+.geen-fotos {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--grijs);
+}
+
+.geen-fotos-icon { font-size: 4rem; margin-bottom: 1rem; }
+
+/* ============================================================
+   UPLOAD SECTIE
+   ============================================================ */
+
+.upload-sectie {
+  background: var(--donker-2);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: var(--border-radius-groot);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.upload-sectie h3 {
+  margin-bottom: 0.5rem;
+  color: var(--goud-licht);
+}
+
+.upload-uitleg {
+  color: var(--grijs);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Drag and drop zone */
+.upload-dropzone {
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: var(--border-radius-groot);
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--groen);
+  background: rgba(143, 229, 8, 0.05);
+}
+
+/* Als bestanden gesleept worden over de zone */
+.upload-dropzone.dragover {
+  border-color: var(--groen);
+  background: rgba(143, 229, 8, 0.1);
+}
+
+.dropzone-icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+.dropzone-content p { margin-bottom: 0.5rem; font-size: 1rem; }
+.dropzone-hint { font-size: 0.8rem; color: var(--grijs); }
+
+/* Rij in upload formulier */
+.upload-form-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.upload-form-row label {
+  font-size: 0.9rem;
+  color: var(--grijs-licht);
+  min-width: 100px;
+}
+
+/* Upload preview grid */
+.upload-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-preview img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(143, 229, 8, 0.3);
+}
+
+/* Voortgangs balk voor upload */
+.upload-voortgang { margin-top: 1rem; }
+
+.voortgang-balk {
+  height: 8px;
+  background: var(--donker-3);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.voortgang-vulling {
+  height: 100%;
+  background: var(--groen);
+  border-radius: 100px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+/* ============================================================
+   LIGHTBOX (FOTO POPUP)
+   ============================================================ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: vervaag 0.2s ease;
+}
+
+@keyframes vervaag {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightbox-foto {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: var(--schaduw);
+}
+
+/* Sluit knop */
+.lightbox-sluit {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: var(--donker-3);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--wit);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.lightbox-sluit:hover { background: var(--danger); border-color: var(--danger); }
+
+/* Navigatie pijlen in lightbox */
+.lightbox-acties {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lightbox-pijl {
+  background: var(--donker-3);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--wit);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.lightbox-pijl:hover { background: var(--groen); color: var(--zwart); border-color: var(--groen); }
+
+/* Download knop in lightbox */
+.btn-download {
+  background: var(--groen);
+  color: var(--zwart);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-download:hover { background: var(--groen-licht); }
+
+.lightbox-naam {
+  color: var(--grijs);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   JAARBOEK PAGINA
+   ============================================================ */
+
+.jaarboek-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Een jaarboek kaart */
+.jaarboek-kaart {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-groot);
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.jaarboek-kaart:hover {
+  transform: translateY(-4px);
+  border-color: rgba(143, 229, 8, 0.3);
+}
+
+/* Cover van het jaarboek */
+.jaarboek-cover {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kleur varianten voor covers */
+.jaarboek-cover.groen { background: linear-gradient(135deg, var(--groen-donker), var(--groen)); }
+.jaarboek-cover.goud { background: linear-gradient(135deg, #7a5c00, var(--goud-licht)); }
+.jaarboek-cover.zwart { background: linear-gradient(135deg, #222, #444); border: 1px solid rgba(255,255,255,0.1); }
+
+.jaarboek-klas-afk {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 3px;
+}
+
+.jaarboek-jaar {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+  color: rgba(0,0,0,0.4);
+}
+
+.jaarboek-info {
+  padding: 1.25rem;
+}
+
+.jaarboek-info h3 { margin-bottom: 0.3rem; }
+.jaarboek-info p {
+  color: var(--grijs);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Jaarboek detail pagina */
+.jaarboek-detail { margin-top: 2rem; }
+
+.terug-btn {
+  background: none;
+  border: none;
+  color: var(--groen);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.terug-btn:hover { opacity: 0.7; }
+
+/* Grid van studenten kaartjes */
+.jaarboek-studenten {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.student-kaart {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.student-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--groen);
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--zwart);
+}
+
+.student-naam { font-weight: 600; font-size: 0.9rem; }
+.student-quote { color: var(--grijs); font-size: 0.75rem; font-style: italic; margin-top: 0.4rem; }
+
+/* ============================================================
+   ADMIN PANEEL
+   ============================================================ */
+
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 1rem;
+}
+
+.admin-tab {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--grijs-licht);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-tab.actief, .admin-tab:hover {
+  background: var(--goud);
+  color: var(--zwart);
+  border-color: var(--goud);
+}
+
+/* Admin inhoud secties */
+.admin-inhoud { animation: inkomend 0.2s ease; }
+
+.admin-inhoud h3 {
+  margin-bottom: 1rem;
+  color: var(--goud-licht);
+}
+
+.admin-uitleg {
+  color: var(--grijs);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+/* Lijst van items in admin */
+.admin-lijst {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Admin lijst item */
+.admin-item {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-item-info { flex: 1; }
+.admin-item-info strong { font-size: 0.95rem; }
+.admin-item-info span { display: block; font-size: 0.8rem; color: var(--grijs); }
+
+/* Chat moderatie rij */
+.chat-moderatie-rij {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   FORMULIER ELEMENTEN
+   ============================================================ */
+
+.form-input {
+  background: var(--donker-3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  color: var(--wit);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--groen);
+}
+
+.form-textarea {
+  background: var(--donker-3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  color: var(--wit);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--groen);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--donker-3);
+  border-top: 1px solid rgba(143, 229, 8, 0.2);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-inhoud p {
+  color: var(--grijs);
+  font-size: 0.9rem;
+}
+
+.footer-quote {
+  color: var(--groen) !important;
+  margin-top: 0.5rem !important;
+  font-style: italic;
+}
+
+/* ============================================================
+   TOAST MELDINGEN
+   ============================================================ */
+
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  background: var(--donker-2);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.2rem;
+  font-size: 0.9rem;
+  min-width: 250px;
+  animation: toast-in 0.3s ease;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toast.success { border-left: 3px solid var(--groen); }
+.toast.error { border-left: 3px solid var(--danger); }
+.toast.info { border-left: 3px solid var(--goud-licht); }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN - MOBIEL
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Nav links verstoppen op mobiel */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .btn-uitloggen { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+  .navbar { padding: 0 1rem; }
+
+  /* Hero aanpassen */
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .hero-knoppen { flex-direction: column; align-items: center; }
+  .hero-knoppen .btn-primair,
+  .hero-knoppen .btn-secundair { width: 100%; justify-content: center; }
+
+  /* Posts in 1 kolom */
+  .posts-grid { grid-template-columns: 1fr; }
+
+  /* Foto grid kleinere items */
+  .foto-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Jaarboek grid */
+  .jaarboek-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Chat */
+  .chat-berichten { height: 250px; }
+
+  /* Video */
+  .pagina-header { flex-direction: column; align-items: flex-start; }
+
+  /* Upload */
+  .upload-dropzone { padding: 2rem 1rem; }
+  .upload-form-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .foto-grid { grid-template-columns: 1fr 1fr; }
+  .jaarboek-grid { grid-template-columns: 1fr; }
+  .login-box { padding: 2rem 1.5rem; }
+}

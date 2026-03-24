@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLR Diploma-uitreiking 2025</title>
+
+  <!-- Fonts van Google - Fredoka voor tekst, Luckiest Guy voor titels -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== LOGIN SCHERM ==================== -->
+  <!-- Dit scherm wordt als eerste getoond, pas na inlog zie je de rest -->
+  <div id="login-screen" class="login-overlay">
+    <div class="login-box">
+      <div class="login-logo">
+        <!-- GLR Logo in SVG formaat -->
+        <svg width="80" height="75" viewBox="0 0 1165 1088" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M836.419 596C835.153 600.477 833.631 605.893 831.919 612.061C826.817 630.438 820.01 655.501 813.2 682.217C806.395 708.914 799.562 737.357 794.423 762.467C789.347 787.269 785.719 809.765 785.719 824.096C785.719 838.822 789.491 855.712 794.711 872.239C799.978 888.913 806.951 905.924 813.844 921.105C820.748 936.311 827.641 949.832 832.806 959.547C833.522 960.894 834.206 962.169 834.853 963.366C830.235 964.788 824.454 966.536 817.67 968.516C798.812 974.017 772.238 981.318 741.412 988.501C679.563 1002.91 601.374 1016.67 534.166 1014.84C466.558 1013 386.879 999.157 323.76 985.655C292.274 978.92 265.051 972.301 245.707 967.366C239.279 965.727 233.724 964.271 229.174 963.062C229.613 962.325 230.067 961.561 230.532 960.77C236.023 951.421 243.236 938.314 250.098 923.304C256.945 908.326 263.546 891.231 267.693 873.935C271.817 856.736 273.687 838.64 270.408 821.973C264.691 792.908 252.784 733.118 242.31 680.61C237.072 654.353 232.191 629.911 228.62 612.034C227.381 605.834 226.3 600.423 225.416 596H836.419Z" fill="black" stroke="#8FE508" stroke-width="22"/>
+          <path d="M539.031 360.223L1055.93 544.763L539.037 757.547L31.5553 544.762L539.031 360.223Z" fill="black" stroke="#8FE508" stroke-width="23"/>
+          <path d="M521 525C521 525 994.698 554.531 1090.45 594.573C1186.19 634.615 1068.5 997.5 1068.5 997.5" stroke="#8FE508" stroke-width="20"/>
+          <path d="M544 491.5C567.581 491.5 586.5 506.819 586.5 525.5C586.5 544.181 567.581 559.5 544 559.5C520.419 559.5 501.5 544.181 501.5 525.5C501.5 506.819 520.419 491.5 544 491.5Z" fill="#8FE508" stroke="#8FE508"/>
+          <path d="M445.391 908H392.655V895.84C392.655 889.696 393.466 884.576 395.087 880.48C396.708 876.299 398.884 872.885 401.615 870.24C404.346 867.509 407.332 865.333 410.575 863.712L419.279 859.36C422.607 857.653 425.295 855.861 427.343 853.984C429.476 852.021 430.543 849.504 430.543 846.432V844.128C430.543 840.971 429.434 838.496 427.215 836.704C425.082 834.827 421.626 833.888 416.847 833.888C413.946 833.888 411.002 834.315 408.015 835.168C405.114 836.021 401.572 837.216 397.391 838.752L392.655 825.568C397.434 823.435 401.786 821.941 405.711 821.088C409.722 820.149 413.604 819.68 417.359 819.68C424.271 819.68 429.775 820.789 433.871 823.008C438.052 825.227 441.039 828.213 442.831 831.968C444.708 835.637 445.647 839.691 445.647 844.128V846.432C445.647 851.04 444.708 854.965 442.831 858.208C441.039 861.451 438.65 864.181 435.663 866.4C432.676 868.619 429.434 870.581 425.935 872.288L417.231 876.64C414.074 878.176 411.727 880.309 410.191 883.04C408.74 885.771 407.93 889.269 407.759 893.536H445.391V908Z" fill="#8FE508"/>
+          <path d="M524.48 855.264V873.568C524.48 884.661 521.877 893.408 516.672 899.808C511.467 906.123 503.829 909.28 493.76 909.28C483.691 909.28 476.053 906.123 470.848 899.808C465.643 893.408 463.04 884.661 463.04 873.568V855.264C463.04 844.171 465.643 835.467 470.848 829.152C476.053 822.837 483.691 819.68 493.76 819.68C503.829 819.68 511.467 822.837 516.672 829.152C521.877 835.467 524.48 844.171 524.48 855.264ZM508.992 855.264C508.992 841.013 503.915 833.888 493.76 833.888C488.555 833.888 484.715 835.68 482.24 839.264C479.765 842.848 478.528 848.181 478.528 855.264V873.568C478.528 880.651 479.765 886.027 482.24 889.696C484.715 893.28 488.555 895.072 493.76 895.072C503.915 895.072 508.992 887.904 508.992 873.568V855.264Z" fill="#8FE508"/>
+        </svg>
+        <span class="login-school-name">GRAFISCH LYCEUM<br/>ROTTERDAM</span>
+      </div>
+
+      <h1 class="login-title">Diploma-uitreiking <span class="gold">2025</span></h1>
+      <p class="login-subtitle">Voer je toegangscode in om verder te gaan</p>
+
+      <!-- Invoerveld voor de code -->
+      <div class="login-form">
+        <input
+          type="password"
+          id="toegangscode"
+          placeholder="Toegangscode..."
+          class="code-input"
+          maxlength="20"
+        />
+        <button onclick="controleerCode()" class="btn-inloggen">
+          <span>Inloggen</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p id="foutmelding" class="foutmelding hidden">❌ Verkeerde code, probeer opnieuw</p>
+      </div>
+
+      <!-- Decoratieve ballonnen in hoek -->
+      <div class="login-deco">🎓</div>
+    </div>
+
+    <!-- Achtergrond decoratie - losstaande vierkantjes zoals in het design -->
+    <div class="bg-squares">
+      <div class="sq sq1"></div>
+      <div class="sq sq2"></div>
+      <div class="sq sq3"></div>
+      <div class="sq sq4"></div>
+      <div class="sq sq5"></div>
+      <div class="sq sq6"></div>
+    </div>
+  </div>
+
+  <!-- ==================== HOOFDAPP ==================== -->
+  <!-- Dit is de echte app, verstopt totdat je inlogt -->
+  <div id="app" class="app hidden">
+
+    <!-- NAVIGATIE BALK bovenaan -->
+    <nav class="navbar">
+      <div class="nav-logo" onclick="navigeerNaar('home')">
+        <svg width="36" height="33" viewBox="0 0 1165 1088" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M836.419 596C835.153 600.477 833.631 605.893 831.919 612.061C826.817 630.438 820.01 655.501 813.2 682.217C806.395 708.914 799.562 737.357 794.423 762.467C789.347 787.269 785.719 809.765 785.719 824.096C785.719 838.822 789.491 855.712 794.711 872.239C799.978 888.913 806.951 905.924 813.844 921.105C820.748 936.311 827.641 949.832 832.806 959.547C833.522 960.894 834.206 962.169 834.853 963.366C830.235 964.788 824.454 966.536 817.67 968.516C798.812 974.017 772.238 981.318 741.412 988.501C679.563 1002.91 601.374 1016.67 534.166 1014.84C466.558 1013 386.879 999.157 323.76 985.655C292.274 978.92 265.051 972.301 245.707 967.366C239.279 965.727 233.724 964.271 229.174 963.062C229.613 962.325 230.067 961.561 230.532 960.77C236.023 951.421 243.236 938.314 250.098 923.304C256.945 908.326 263.546 891.231 267.693 873.935C271.817 856.736 273.687 838.64 270.408 821.973C264.691 792.908 252.784 733.118 242.31 680.61C237.072 654.353 232.191 629.911 228.62 612.034C227.381 605.834 226.3 600.423 225.416 596H836.419Z" fill="black" stroke="#8FE508" stroke-width="30"/>
+          <path d="M539.031 360.223L1055.93 544.763L539.037 757.547L31.5553 544.762L539.031 360.223Z" fill="black" stroke="#8FE508" stroke-width="30"/>
+          <path d="M521 525C521 525 994.698 554.531 1090.45 594.573C1186.19 634.615 1068.5 997.5 1068.5 997.5" stroke="#8FE508" stroke-width="25"/>
+          <path d="M544 491.5C567.581 491.5 586.5 506.819 586.5 525.5C586.5 544.181 567.581 559.5 544 559.5C520.419 559.5 501.5 544.181 501.5 525.5C501.5 506.819 520.419 491.5 544 491.5Z" fill="#8FE508" stroke="#8FE508"/>
+        </svg>
+        <span class="nav-titel">GLR <span class="groen">2025</span></span>
+      </div>
+
+      <!-- Navigatie links voor desktop -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" onclick="navigeerNaar('home')" class="nav-link active" data-page="home">🏠 Home</a></li>
+        <li><a href="#" onclick="navigeerNaar('live')" class="nav-link" data-page="live">📺 Livestream</a></li>
+        <li><a href="#" onclick="navigeerNaar('fotos')" class="nav-link" data-page="fotos">📸 Foto's</a></li>
+        <li><a href="#" onclick="navigeerNaar('jaarboek')" class="nav-link" data-page="jaarboek">📖 Jaarboek</a></li>
+        <!-- Admin knop is alleen zichtbaar voor admins -->
+        <li id="admin-nav-item" class="hidden"><a href="#" onclick="navigeerNaar('admin')" class="nav-link admin-link" data-page="admin">⚙️ Admin</a></li>
+      </ul>
+
+      <!-- Hamburger menu voor mobile -->
+      <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Uitlog knop -->
+      <button onclick="uitloggen()" class="btn-uitloggen">Uitloggen</button>
+    </nav>
+
+    <!-- Mobile navigatie menu (uitklapbaar) -->
+    <div class="mobile-menu hidden" id="mobile-menu">
+      <a href="#" onclick="navigeerNaar('home'); sluitMenu()">🏠 Home</a>
+      <a href="#" onclick="navigeerNaar('live'); sluitMenu()">📺 Livestream</a>
+      <a href="#" onclick="navigeerNaar('fotos'); sluitMenu()">📸 Foto's</a>
+      <a href="#" onclick="navigeerNaar('jaarboek'); sluitMenu()">📖 Jaarboek</a>
+      <a href="#" id="admin-mobile-link" class="hidden" onclick="navigeerNaar('admin'); sluitMenu()">⚙️ Admin</a>
+    </div>
+
+    <!-- ===== PAGINA: HOME ===== -->
+    <div id="pagina-home" class="pagina actief">
+      <!-- Hero sectie bovenaan de home pagina -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">🎓 Geslaagd!</div>
+          <h1 class="hero-titel">
+            Diploma-uitreiking
+            <span class="hero-jaar">2025</span>
+          </h1>
+          <p class="hero-tekst">Gefeliciteerd aan alle geslaagden van het Grafisch Lyceum Rotterdam! Jullie hebben het gehaald. 🎉</p>
+          <div class="hero-knoppen">
+            <button onclick="navigeerNaar('live')" class="btn-primair">
+              🔴 Bekijk Livestream
+            </button>
+            <button onclick="navigeerNaar('fotos')" class="btn-secundair">
+              📸 Bekijk Foto's
+            </button>
+          </div>
+        </div>
+        <!-- Decoratieve vlakken achtergrond -->
+        <div class="hero-deco">
+          <div class="hero-sq hero-sq1"></div>
+          <div class="hero-sq hero-sq2"></div>
+          <div class="hero-sq hero-sq3"></div>
+        </div>
+      </section>
+
+      <!-- Posts sectie - iedereen kan liken -->
+      <section class="posts-sectie">
+        <div class="container">
+          <h2 class="sectie-titel"><span class="luckies">Laatste Nieuws</span></h2>
+
+          <!-- Posts worden hier door JavaScript geladen -->
+          <div id="posts-container" class="posts-grid">
+            <!-- Placeholder posts die altijd zichtbaar zijn -->
+            <article class="post-kaart" data-post-id="1">
+              <div class="post-header">
+                <span class="post-auteur">🏫 Grafisch Lyceum</span>
+                <span class="post-datum">14 jun 2025</span>
+              </div>
+              <h3 class="post-titel">Welkom bij de Diploma-uitreiking!</h3>
+              <p class="post-tekst">Vandaag is de grote dag! Alle examenkandidaten van GLR worden in het zonnetje gezet. We zijn trots op jullie allemaal! De livestream begint om 14:00 uur.</p>
+              <div class="post-fotos-preview hidden" id="post-fotos-1"></div>
+              <div class="post-acties">
+                <!-- Like knop - iedereen kan liken -->
+                <button class="like-btn" onclick="likePost(1, this)" data-geliked="false">
+                  <span class="like-hart">🤍</span>
+                  <span class="like-teller" id="likes-1">47</span>
+                </button>
+                <span class="post-deel-hint">Deel dit moment!</span>
+              </div>
+            </article>
+
+            <article class="post-kaart" data-post-id="2">
+              <div class="post-header">
+                <span class="post-auteur">🏫 Grafisch Lyceum</span>
+                <span class="post-datum">14 jun 2025</span>
+              </div>
+              <h3 class="post-titel">Programma van vandaag</h3>
+              <p class="post-tekst">📋 Tijden: 13:30 inloop | 14:00 openingswoord | 14:30 diploma-uitreiking | 15:30 receptie. Vergeet niet je diploma te tekenen! 🖊️</p>
+              <div class="post-acties">
+                <button class="like-btn" onclick="likePost(2, this)" data-geliked="false">
+                  <span class="like-hart">🤍</span>
+                  <span class="like-teller" id="likes-2">23</span>
+                </button>
+                <span class="post-deel-hint">Deel dit moment!</span>
+              </div>
+            </article>
+
+            <article class="post-kaart" data-post-id="3">
+              <div class="post-header">
+                <span class="post-auteur">🏫 Grafisch Lyceum</span>
+                <span class="post-datum">13 jun 2025</span>
+              </div>
+              <h3 class="post-titel">School is tijdelijk, de herinering is voor altijd</h3>
+              <p class="post-tekst">Morgen is het zover! Zorg dat je er klaar voor bent. GLR is trots op jullie prestaties. De toekomst ligt voor jullie open - pak hem! 🚀</p>
+              <div class="post-acties">
+                <button class="like-btn" onclick="likePost(3, this)" data-geliked="false">
+                  <span class="like-hart">🤍</span>
+                  <span class="like-teller" id="likes-3">89</span>
+                </button>
+                <span class="post-deel-hint">Deel dit moment!</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Admin kan een post toevoegen -->
+          <div id="post-toevoegen-sectie" class="hidden">
+            <div class="admin-post-form">
+              <h3>✏️ Nieuwe post toevoegen</h3>
+              <input type="text" id="nieuwe-post-titel" placeholder="Titel van de post..." class="form-input" />
+              <textarea id="nieuwe-post-tekst" placeholder="Tekst van de post..." class="form-textarea" rows="4"></textarea>
+              <button onclick="voegPostToe()" class="btn-primair">Post plaatsen</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info blokjes sectie -->
+      <section class="info-sectie">
+        <div class="container">
+          <div class="info-grid">
+            <div class="info-kaart" onclick="navigeerNaar('live')">
+              <div class="info-icon">📺</div>
+              <h3>Livestream</h3>
+              <p>Kijk mee via onze Vimeo stream, ook vanuit huis</p>
+            </div>
+            <div class="info-kaart" onclick="navigeerNaar('fotos')">
+              <div class="info-icon">📸</div>
+              <h3>Foto's</h3>
+              <p>Download de herinneringen van deze bijzondere dag</p>
+            </div>
+            <div class="info-kaart" onclick="navigeerNaar('jaarboek')">
+              <div class="info-icon">📖</div>
+              <h3>Jaarboek</h3>
+              <p>Bekijk het digitale jaarboek van schooljaar 2024-2025</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== PAGINA: LIVESTREAM ===== -->
+    <div id="pagina-live" class="pagina">
+      <div class="container">
+        <div class="pagina-header">
+          <h1 class="pagina-titel"><span class="luckies">Livestream</span></h1>
+          <div class="live-badge" id="live-status-badge">
+            <span class="live-dot"></span> LIVE
+          </div>
+        </div>
+
+        <!-- Vimeo video embed - video ID aanpassen in JS -->
+        <div class="video-wrapper">
+          <iframe
+            id="vimeo-player"
+            src="https://player.vimeo.com/video/76979871?autoplay=0&title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="GLR Diploma-uitreiking 2025 Livestream"
+          ></iframe>
+        </div>
+
+        <div class="video-info">
+          <h2>🎓 GLR Diploma-uitreiking 2025</h2>
+          <p>Mis niks van deze bijzondere dag! De uitreiking begint om 14:00 uur. Ververs de pagina als de stream niet laadt.</p>
+        </div>
+
+        <!-- Live chat sectie -->
+        <div class="chat-sectie">
+          <div class="chat-header">
+            <h3>💬 Live Chat</h3>
+            <span class="chat-aanwezig" id="chat-aanwezig">0 kijkers</span>
+          </div>
+
+          <!-- Chat berichten worden hier geladen -->
+          <div class="chat-berichten" id="chat-berichten">
+            <!-- Berichten worden door JavaScript hier ingezet -->
+            <div class="chat-bericht systeem">
+              <span class="chat-naam systeem-naam">🔔 Systeem</span>
+              <span class="chat-tekst">Welkom in de live chat! Wees vriendelijk tegen elkaar. 😊</span>
+            </div>
+          </div>
+
+          <!-- Bericht invoer -->
+          <div class="chat-invoer">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Schrijf een berichtje..."
+              class="chat-input"
+              maxlength="200"
+              onkeypress="chatEnterKey(event)"
+            />
+            <button onclick="verstuurChatBericht()" class="btn-chat-stuur">
+              Stuur →
+            </button>
+          </div>
+
+          <!-- Admin chat moderatie knopjes (alleen voor admins) -->
+          <div id="chat-admin-tools" class="hidden chat-admin-tools">
+            <span class="admin-label">⚙️ Admin tools:</span>
+            <button onclick="chatVerwijderAlles()" class="btn-admin-klein">🗑️ Wis alle berichten</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PAGINA: FOTO'S ===== -->
+    <div id="pagina-fotos" class="pagina">
+      <div class="container">
+        <div class="pagina-header">
+          <h1 class="pagina-titel"><span class="luckies">Foto Galerij</span></h1>
+          <p class="pagina-sub">Klik op een foto om hem groter te zien en te downloaden</p>
+        </div>
+
+        <!-- Filter knoppen per klas -->
+        <div class="foto-filters" id="foto-filters">
+          <button class="filter-btn actief" onclick="filterFotos('alle', this)">Alle klassen</button>
+          <!-- Meer klassen worden door JavaScript toegevoegd als er foto's zijn -->
+        </div>
+
+        <!-- Foto grid - wordt gevuld door JavaScript -->
+        <div class="foto-grid" id="foto-grid">
+          <!-- Lege staat als er geen fotos zijn -->
+          <div class="geen-fotos" id="geen-fotos-melding">
+            <div class="geen-fotos-icon">📷</div>
+            <h3>Nog geen foto's beschikbaar</h3>
+            <p>De foto's worden na de diploma-uitreiking zo snel mogelk hier geplaatst!</p>
+          </div>
+        </div>
+
+        <!-- Admin upload knop - alleen voor admins -->
+        <div id="foto-upload-sectie" class="hidden upload-sectie">
+          <h3>📤 Foto's uploaden (Admin)</h3>
+          <p class="upload-uitleg">Selecteer foto's per klas. Alleen JPG, PNG en WEBP zijn toegestaan. Max 10MB per foto.</p>
+
+          <div class="upload-form">
+            <div class="upload-form-row">
+              <label>Klas / Groep naam:</label>
+              <input type="text" id="upload-klas" placeholder="Bijv. MDIA4A" class="form-input" />
+            </div>
+            <div class="upload-dropzone" id="upload-dropzone" onclick="document.getElementById('foto-bestanden').click()">
+              <div class="dropzone-content">
+                <span class="dropzone-icon">☁️</span>
+                <p>Klik hier of sleep foto's hierheen</p>
+                <span class="dropzone-hint">JPG, PNG, WEBP — max 10MB per foto</span>
+              </div>
+              <input type="file" id="foto-bestanden" multiple accept=".jpg,.jpeg,.png,.webp" onchange="fotoBestandenGekozen(event)" style="display:none" />
+            </div>
+
+            <!-- Preview van geselecteerde fotos -->
+            <div id="upload-preview" class="upload-preview hidden"></div>
+
+            <button onclick="uploadFotos()" class="btn-primair" id="upload-btn" disabled>
+              📤 Foto's uploaden
+            </button>
+            <div id="upload-voortgang" class="upload-voortgang hidden">
+              <div class="voortgang-balk">
+                <div class="voortgang-vulling" id="voortgang-vulling"></div>
+              </div>
+              <span id="voortgang-tekst">Uploaden...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foto lightbox (popup als je klikt) -->
+      <div class="lightbox hidden" id="lightbox" onclick="sluitLightbox(event)">
+        <div class="lightbox-content">
+          <button class="lightbox-sluit" onclick="sluitLightbox()">✕</button>
+          <img src="" alt="Foto" class="lightbox-foto" id="lightbox-foto" />
+          <div class="lightbox-acties">
+            <button class="lightbox-pijl links" onclick="vorigeFoto(event)">‹</button>
+            <a href="" download class="btn-download" id="lightbox-download">⬇️ Downloaden</a>
+            <button class="lightbox-pijl rechts" onclick="volgendeFoto(event)">›</button>
+          </div>
+          <p class="lightbox-naam" id="lightbox-naam"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PAGINA: JAARBOEK ===== -->
+    <div id="pagina-jaarboek" class="pagina">
+      <div class="container">
+        <div class="pagina-header">
+          <h1 class="pagina-titel"><span class="luckies">Jaarboek 2025</span></h1>
+          <p class="pagina-sub">Het digitale jaarboek van schooljaar 2024–2025</p>
+        </div>
+
+        <!-- Jaarboek kaarten per klas -->
+        <div class="jaarboek-grid" id="jaarboek-grid">
+          <!-- Jaarboek items worden hier getoond -->
+          <div class="jaarboek-kaart">
+            <div class="jaarboek-cover groen">
+              <span class="jaarboek-klas-afk">MDIA</span>
+              <span class="jaarboek-jaar">2025</span>
+            </div>
+            <div class="jaarboek-info">
+              <h3>Media Vormgeven</h3>
+              <p>Klas MDIA4A & MDIA4B</p>
+              <button class="btn-secundair klein" onclick="openJaarboek('MDIA')">Bekijken 📖</button>
+            </div>
+          </div>
+
+          <div class="jaarboek-kaart">
+            <div class="jaarboek-cover goud">
+              <span class="jaarboek-klas-afk">ICT</span>
+              <span class="jaarboek-jaar">2025</span>
+            </div>
+            <div class="jaarboek-info">
+              <h3>Software Development</h3>
+              <p>Klas SD4A & SD4B</p>
+              <button class="btn-secundair klein" onclick="openJaarboek('ICT')">Bekijken 📖</button>
+            </div>
+          </div>
+
+          <div class="jaarboek-kaart">
+            <div class="jaarboek-cover zwart">
+              <span class="jaarboek-klas-afk">AV</span>
+              <span class="jaarboek-jaar">2025</span>
+            </div>
+            <div class="jaarboek-info">
+              <h3>AV-produkties</h3>
+              <p>Klas AVP4A</p>
+              <button class="btn-secundair klein" onclick="openJaarboek('AV')">Bekijken 📖</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jaarboek detail popup -->
+        <div class="jaarboek-detail hidden" id="jaarboek-detail">
+          <button class="terug-btn" onclick="sluitJaarboek()">← Terug naar overzicht</button>
+          <h2 id="jaarboek-detail-titel">Jaarboek</h2>
+          <div class="jaarboek-studenten" id="jaarboek-studenten">
+            <!-- Studenten worden hier geladen -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PAGINA: ADMIN ===== -->
+    <div id="pagina-admin" class="pagina">
+      <div class="container">
+        <div class="pagina-header">
+          <h1 class="pagina-titel"><span class="luckies">Admin Paneel</span></h1>
+          <p class="pagina-sub">Beheer de diploma-uitreiking website</p>
+        </div>
+
+        <!-- Admin tabs -->
+        <div class="admin-tabs">
+          <button class="admin-tab actief" onclick="adminTab('posts', this)">📝 Posts</button>
+          <button class="admin-tab" onclick="adminTab('fotos', this)">📸 Foto's</button>
+          <button class="admin-tab" onclick="adminTab('chat', this)">💬 Chat</button>
+          <button class="admin-tab" onclick="adminTab('live', this)">📺 Livestream</button>
+        </div>
+
+        <!-- Admin: Posts beheer -->
+        <div class="admin-inhoud" id="admin-posts">
+          <h3>Posts beheren</h3>
+          <div class="admin-post-form">
+            <input type="text" id="admin-post-titel" placeholder="Post titel..." class="form-input" />
+            <textarea id="admin-post-tekst" placeholder="Post tekst..." class="form-textarea" rows="4"></textarea>
+            <button onclick="adminVoegPostToe()" class="btn-primair">✅ Post plaatsen</button>
+          </div>
+          <div id="admin-posts-lijst" class="admin-lijst">
+            <!-- Posts worden hier getoond voor beheer -->
+          </div>
+        </div>
+
+        <!-- Admin: Foto beheer -->
+        <div class="admin-inhoud hidden" id="admin-fotos-beheer">
+          <h3>Foto's uploaden per klas</h3>
+          <div class="upload-form">
+            <div class="upload-form-row">
+              <label>Klas naam:</label>
+              <input type="text" id="admin-upload-klas" placeholder="Bijv. MDIA4A" class="form-input" />
+            </div>
+            <div class="upload-dropzone" onclick="document.getElementById('admin-foto-bestanden').click()">
+              <div class="dropzone-content">
+                <span class="dropzone-icon">☁️</span>
+                <p>Klik of sleep foto's hierheen</p>
+                <span class="dropzone-hint">JPG, PNG, WEBP — max 10MB</span>
+              </div>
+              <input type="file" id="admin-foto-bestanden" multiple accept=".jpg,.jpeg,.png,.webp" onchange="adminFotoGekozen(event)" style="display:none" />
+            </div>
+            <div id="admin-upload-preview" class="upload-preview hidden"></div>
+            <button onclick="adminUploadFotos()" class="btn-primair" id="admin-upload-btn" disabled>📤 Uploaden</button>
+          </div>
+
+          <!-- Lijst van geuploade fotos -->
+          <h3 style="margin-top: 2rem;">Geüploade foto's</h3>
+          <div id="admin-fotos-lijst" class="admin-lijst">
+            <!-- Fotos worden hier getoond -->
+          </div>
+        </div>
+
+        <!-- Admin: Chat beheer -->
+        <div class="admin-inhoud hidden" id="admin-chat-beheer">
+          <h3>Chat moderatie</h3>
+          <p>Hier kun je alle chatberichten bekijken en verwijderen.</p>
+          <button onclick="chatVerwijderAlles()" class="btn-gevaar">🗑️ Wis alle chatberichten</button>
+          <div id="admin-chat-lijst" class="admin-lijst chat-moderatie-lijst">
+            <!-- Chat berichten worden hier getoond voor moderatie -->
+          </div>
+        </div>
+
+        <!-- Admin: Livestream instellingen -->
+        <div class="admin-inhoud hidden" id="admin-live-beheer">
+          <h3>Vimeo livestream instellen</h3>
+          <p>Vul het Vimeo video-ID in van de livestream. Je vindt dit in de URL van de Vimeo video.</p>
+          <div class="upload-form-row">
+            <label>Vimeo Video ID:</label>
+            <input type="text" id="vimeo-video-id" placeholder="bijv. 76979871" class="form-input" />
+          </div>
+          <button onclick="updateVimeoLink()" class="btn-primair">💾 Link opslaan</button>
+          <p class="admin-uitleg">Na het opslaan wordt de link bijgewerkt voor alle bezoekers. De stream is alleen zichtbaar voor ingelogde gebruikers.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer onderaan de pagina -->
+    <footer class="footer">
+      <div class="footer-inhoud">
+        <p>© 2025 Grafisch Lyceum Rotterdam — Diploma-uitreiking</p>
+        <p class="footer-quote">"School is tijdelijk, maar de herinnering is voor altijd" 🎓</p>
+      </div>
+    </footer>
+
+  </div><!-- einde #app -->
+
+  <!-- Toast meldingen (kleine popupjes rechts onderin) -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Hoofd JavaScript bestand -->
+  <script src="js/app.js"></script>
+</body>
+</html>
